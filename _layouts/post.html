@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<article>
+  <header class="post-header">
+    <div class="post-meta">{{ page.date | date: "%Y.%m.%d" }} — journal entry</div>
+    <h1 class="post-title">{{ page.title }}</h1>
+  </header>
+
+  {% if page.hero_image %}
+  <div class="post-hero">
+    <img src="{{ page.hero_image | relative_url }}" alt="{{ page.hero_alt | default: page.title }}">
+    {% if page.hero_credit %}
+    <span class="post-hero-credit">{{ page.hero_credit }}</span>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+</article>
